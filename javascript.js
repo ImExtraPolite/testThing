@@ -10,13 +10,29 @@ function computerChoice() {
   }
 }
 
-function playerSelection(computer, user) {
-  let something = computer;
+function playerSelection(user) {
+  let computer = computerChoice();
+  let newUser = user.toLowerCase();
+  let score;
+  let win;
+  let lose;
+  let tie;
 
-  return something + user;
+  if (computer == "rock" && newUser == "rock") {
+    tie += 1;
+    return "tie";
+  } else if (computer == "rock" && newUser == "paper") {
+    win += 1;
+    return "win";
+  } else if (computer == "rock" && newUser == "scissors"){
+    lose += 1;
+    return "lose";
+  }
+ 
 }
 
-let user = "rock";
 
-console.log(playerSelection(computerChoice, user));
+let user = "Rock";
+
+console.log(playerSelection(user));
 
