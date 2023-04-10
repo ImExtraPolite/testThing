@@ -48,8 +48,13 @@ function playerSelection(user) {
   } 
 }
 
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 
-let user = "Rock";
+console.log(rock.textContent);
 
-console.log(playerSelection(user));
+// rock.addEventListener("click", () => {
+
+// });  
 
