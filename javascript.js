@@ -27,8 +27,25 @@ function playerSelection(user) {
   } else if (computer == "rock" && newUser == "scissors"){
     lose += 1;
     return "lose";
-  }
- 
+  } else if (computer == "paper" && newUser == "rock") {
+    lose += 1;
+    return "lose";
+  } else if (computer == "paper" && newUser == "paper") {
+    tie += 1;
+    return "tie";
+  } else if (computer == "paper" && newUser == "scissors") {
+    win += 1;
+    return "win";
+  } else if (computer == "scissors" && newUser == "rock") {
+    lose += 1;
+    return "win";
+  } else if (computer == "scissors" && newUser == "paper") {
+    tie += 1;
+    return "lose";
+  } else if (computer == "scissors" && newUser == "scissors") {
+    win += 1;
+    return "tie";
+  } 
 }
 
 
