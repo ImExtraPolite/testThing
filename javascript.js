@@ -12,49 +12,55 @@ function computerChoice() {
 
 function playerSelection(user) {
   let computer = computerChoice();
-  let newUser = user.toLowerCase();
-  let score;
-  let win;
-  let lose;
-  let tie;
+  // let newUser = user.toLowerCase();
+ 
 
   if (computer == "rock" && newUser == "rock") {
-    tie += 1;
     return "tie";
   } else if (computer == "rock" && newUser == "paper") {
-    win += 1;
     return "win";
   } else if (computer == "rock" && newUser == "scissors"){
-    lose += 1;
     return "lose";
   } else if (computer == "paper" && newUser == "rock") {
-    lose += 1;
     return "lose";
   } else if (computer == "paper" && newUser == "paper") {
-    tie += 1;
     return "tie";
   } else if (computer == "paper" && newUser == "scissors") {
-    win += 1;
     return "win";
   } else if (computer == "scissors" && newUser == "rock") {
-    lose += 1;
     return "win";
   } else if (computer == "scissors" && newUser == "paper") {
-    tie += 1;
     return "lose";
   } else if (computer == "scissors" && newUser == "scissors") {
-    win += 1;
     return "tie";
   } 
 }
 
+
+let wScore;
+let lScore;
+let tScore; 
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
+const win = document.querySelector(".win");
+const lose = document.querySelector(".lose");
+const tie = document.querySelector(".tie");
 
-console.log(rock.textContent);
 
-// rock.addEventListener("click", () => {
 
-// });  
+rock.addEventListener("click", () => {
+  if (playerSelection(rock) == "win") {
+    wScore +=1;
+    win.textContent = wScore;
+  }
+});  
+
+paper.addEventListener("click", () => {
+  alert(playerSelection(paper.textContent))
+});  
+
+scissors.addEventListener("click", () => {
+  alert(playerSelection(scissors.textContent))
+});  
 
