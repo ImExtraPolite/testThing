@@ -12,9 +12,8 @@ function computerChoice() {
 
 function playerSelection(user) {
   let computer = computerChoice();
-  // let newUser = user.toLowerCase();
- 
-
+  let newUser = user.toLowerCase();
+  
   if (computer == "rock" && newUser == "rock") {
     return "tie";
   } else if (computer == "rock" && newUser == "paper") {
@@ -36,10 +35,9 @@ function playerSelection(user) {
   } 
 }
 
-
-let wScore;
-let lScore;
-let tScore; 
+let wScore = 0;
+let lScore = 0;
+let tScore = 0; 
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
@@ -47,12 +45,16 @@ const win = document.querySelector(".win");
 const lose = document.querySelector(".lose");
 const tie = document.querySelector(".tie");
 
-
-
 rock.addEventListener("click", () => {
-  if (playerSelection(rock) == "win") {
+  if (playerSelection(rock.textContent) == "win") {
     wScore +=1;
     win.textContent = wScore;
+  } else if (playerSelection(rock.textContent) == "lose"){
+    lScore +=1;
+    lose.textContent = lScore;
+  } else {
+    tScore +=1;
+    tie.textContent = tScore;
   }
 });  
 
